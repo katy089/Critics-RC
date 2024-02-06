@@ -1,0 +1,22 @@
+.student--container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.student--container--card {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.25rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.student--container--card--badge {
+    flex-shrink: 0;
+    height: 1rem;
+    width: 1rem;
+    flex-basis: auto;
+}

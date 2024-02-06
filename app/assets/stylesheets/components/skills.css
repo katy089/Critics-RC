@@ -1,0 +1,23 @@
+.skills__summary {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+gap: 2rem;
+}
+
+.skills__summary__card {
+    display: grid;
+    grid-template-columns: 2rem auto;
+    gap: 1rem;
+}
+
+.skills__summary__card__badge {
+    grid-column-start: 0;
+}
+
+.skills__summary__card__title {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+}

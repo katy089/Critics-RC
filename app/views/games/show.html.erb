@@ -1,0 +1,32 @@
+<section class="section-xs-padding">
+  <div>
+    <div class="games-table">
+      <div class="game-card">
+        <div class="game-card__img">
+          <% if @game.cover.attached?%>
+            <%= image_tag @game.cover%>
+          <%else%>
+            <%= image_tag "coverh.jpeg"%>
+          <%end%>
+        </div>
+        <div class="game-table__card-title mb-8 mt-4">
+          <div>
+            <p class="heading-sm"><%= @game.name %></p>
+            <span class="text-sm"><%= @game.release_date.strftime('%Y') %></span>
+          </div>
+          <p class="rating"><%= number_with_precision(@game.rating, precision: 1) %></p>
+        </div>
+        <div class="flex-row">
+          <p>Game Details</p>
+          <p>Critics (2)</p>
+        </div>
+        <div class="game-table__card-summary">
+          <p class="content-sm text-align-center"><%= @game.summary %></p>
+        </div>
+        <div class="flex-row">
+          <p class="mt-8"><%= link_to "Back to games", games_path, class: "text-decoration-none color-primary" %></p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,45 @@
+<section class="section-xs-padding">
+  <div>
+    <h1 class="heading--sm mb-3">Games</h1>
+    <%= link_to 'New Game', new_game_path, class: "button button--primary fit-content custom-small-button text-decoration-none" %>
+    <div class="games-table">
+      <% @games.each do |game| %>
+        <div class="game-table__card">
+          <div class="game-table__card-img">
+          <% if game.cover.attached?%>
+            <%= image_tag game.cover%>
+          <%else%>
+            <%= image_tag "cover.jpg"%>
+          <%end%>
+          </div>
+          <div class="game-table__card-title">
+            <div>
+              
+              <p><%= link_to game.name, game_path(game.id), class: "heading-xs text-decoration-none " %></p>
+              <span class="text-xs light"><%= game.release_date.strftime('%Y') %></span>
+            </div>
+            
+            <p class="rating"><%= number_with_precision(game.rating, precision: 1) %></p>
+          </div>
+          
+          <div class="game-table__card-summary">
+            <p class="content-sm"><%= truncate(game.summary, length: 100) %></p>
+          </div>
+          <div class="game-table__card-links">
+            <p class="content-xs light"><%= game.critics_count %> Critics</p>
+            <div class="icon">
+              <%= link_to(edit_game_path(game)) do %>
+              <%= image_tag("Pencil.png", alt: "Edit") %>
+            <% end %>
+            <%=link_to(game_path(game), method: :delete, data: {turbo_confirm: "Are you sure?"}) do%>
+              <%= image_tag("Trash.png", alt: "Delete") %>
+            <% end %>
+            </div>
+            
+          </div>
+          
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

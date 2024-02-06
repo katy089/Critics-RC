@@ -1,0 +1,113 @@
+.games-table {
+    padding: 16px 4px;
+    overflow: auto;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+}
+/* *** Katy ***: hice los contenedores con grid para que fuera mas facil manejarlos */
+.game-table__card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: repeat(3, auto);
+    background: #ffffff;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-radius: 0;
+}
+.game-table__card-img {
+    grid-area: 1 / 1 / 4 / 2;
+    width: 120px;
+    height: 160px;
+}
+.game-table__card-title {
+    grid-area: 1 / 2 / 2 / 3;
+    margin-top: 8px;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.game-table__card-summary {
+    grid-area: 2 / 2 / 3 / 3;
+    padding: 0 8px;
+    margin: 4px 0;
+}
+.game-table__card-links {
+    grid-area: 3 / 2 / 4 / 3;
+    padding: 0 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.icon {
+    display: flex;
+    gap: 4px;
+    height: 16px;
+}
+
+.rating {
+    background: #757575;
+    color: #fff;
+    height: fit-content;
+    padding: 4px;
+    border-radius: 4px;
+}
+table {
+    border-collapse: collapse;
+    text-indent: 0;
+    border-radius: 4px;
+    box-shadow: var(--shadow-base);
+}
+
+table a {
+    font-weight: 600;
+}
+
+table thead {
+    background-color: var(--gray-100);
+    color: var(--secondary-300);
+}
+
+tr + tr > td {
+    border-top: 1px solid var(--gray-200);
+}
+
+table th {
+    padding: 12px 24px;
+    text-align: left;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+table td {
+    padding: 16px 24px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.custom-small-button {
+    font-size: 12px; /* Ajusta el tamaño de la fuente */
+    padding: 6px 10px; /* Ajusta el espaciado del botón */
+    height: 28px;
+    width: 100px;
+    border-radius: 4px;
+    background-color: #f490b1;
+    text-transform: uppercase;
+    gap: 8px;
+}
+
+.custom-h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 600px;
+}
+
+.game-card__img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+}

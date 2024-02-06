@@ -1,0 +1,54 @@
+<%= form_with(model: game, class: "flex flex-column gap-4") do |form| %>
+  <div class="input">
+    <%= form.label :name, class:"content-xs overline mt-4"%>
+    <div class="input__container">
+      <%= form.text_field :name, class: "input__content", placeholder: "Magic Game" %>
+    </div>
+  </div>
+
+  <div class="input">
+    <%= form.label :summary, class:"content-xs overline mt-8"%>
+    <div class="input__container">
+      <%= form.text_area :summary, class: "input__content", placeholder: "About game SA..." %>
+    </div>
+
+  </div>
+
+  <div class="input">
+    <%= form.label :release_date, class:"content-xs overline mt-8"%>
+    <div class="input__container">
+      <%= form.date_field :release_date, class: "input__content" %>
+    </div>
+
+  </div>
+
+  <div class="input">
+    <%= form.label :rating, class:"content-xs overline mt-8"%>
+    <div class="input__container">
+      <%= form.number_field :rating, step: 0.1, class: "input__content" %>
+    </div>
+
+  </div>
+
+  <div class="select">
+    <%= form.label :category, class:"content-xs overline mt-8"%>
+    <%= form.select :category, Game.categories.keys, { prompt: true }, { class: "select__input " } %>
+
+  </div>
+
+  <div class="select">
+    <%= form.label :parent_id, class:"content-xs overline mt-8"%>
+    <%= form.collection_select :parent_id, Game.main_game, :id, :name, { include_blank: "Please select" }, { class: "select__input " } %>
+
+  </div>
+  <div class="select">
+    <%= form.label :cover, class: "content-xs overline mt-8" %>
+    <%= form.file_field :cover%>
+  </div>
+
+  <div class="flex-row">
+    <%= form.submit class: "button button--primary mt-8 ", style: "width: 100%" %>
+  </div>
+  
+
+<% end %>

@@ -1,0 +1,82 @@
+.button {
+    font-size: 1rem;
+    line-height: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: none;
+    text-transform: capitalize;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    outline: none; /* Eliminar el contorno predeterminado en algunos navegadores */
+}
+
+/* Botón por defecto */
+.button--default,
+.button--primary,
+.button--secondary {
+    color: var(--white);
+    border: none;
+}
+
+.button--default {
+    background-color: var(--gray-300);
+}
+
+.button--default:hover {
+    background-color: var(--gray-400);
+}
+
+.button--default:active {
+    background-color: var(--gray-500);
+}
+
+.button--primary {
+    background-color: var(--primary);
+}
+
+.button--primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.button--primary:active {
+    background-color: var(--primary-darker);
+}
+
+.button--secondary {
+    background-color: var(--secondary);
+}
+
+.button--secondary:hover {
+    background-color: var(--secondary-dark);
+}
+
+.button--secondary:active {
+    background-color: var(--secondary-darker);
+}
+
+/* Botones deshabilitados */
+.button:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* Estilos adicionales para los botones al enfocarlos */
+.button:focus {
+    outline: 3px solid var(--info);
+    outline-offset: 1px;
+}
+
+/* Tamaños */
+.button--sm {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.button--lg {
+    font-size: 1.125rem;
+    padding: 0.875rem 1.5rem;
+}

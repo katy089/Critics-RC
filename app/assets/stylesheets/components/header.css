@@ -1,0 +1,59 @@
+.header {
+    background-color: var(--white);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.navbar__logo {
+    margin: 0.3em 0;
+    color: var(--gray-900);
+}
+/* estilos menu */
+.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    background-color: var(--background);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid var(--gray-400);
+    font-size: 14px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-bottom: 10px;
+}
+
+.menu a {
+    padding: 0.25em 0.5em;
+    border-radius: 0.5em;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+}
+.menu a:hover {
+    color: var(--primary-dark);
+}
+.menu a:focus {
+    outline: 1px solid var(--primary);
+}
+
+/* Mostrar el menú cuando se interactúa con el botón de hamburguesa */
+header:hover .menu {
+    display: block;
+}

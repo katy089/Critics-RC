@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CriticsRc</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag "custom", "data-turbolinks-track": "reload" %>
+
+  </head>
+
+  <body>
+    <header class='header'> 
+    <div class='container-lg'>
+      <div class='navbar'>
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.svg' %>
+        <% end %>
+        <img src="<%= asset_path('Trailing.svg') %>" id="menu-icon">
+      </div>
+      <nav class="menu" id="menu">
+        <div class="flex-column">
+          <ul>
+            <li><span class="welcome-message">Welcome</span></li>
+            <li><a href="#">Edit Profile </a></li>
+            <li><%=link_to 'Games', games_path%></li>
+            <li><%=link_to 'Companies', companies_path%></li>
+            <li>
+              <%= button_to "Logout", games_path, class: "button content-xs overline button--sm button--secondary" %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+    </header>
+
+    <main class='container-lg'>
+      <%= yield %>
+    </main>
+    <footer class='section-xs-padding'> 
+      <section class='container-md flexbox-column-container text-align-center'>
+        <p class='text-sm regular'> © 2024 - Codeable CriticsRC</p>
+        <p class='text-sm regular'>Build with ♥ by</p>
+        <div class='student--container'>
+          <div class='student--container--card'>
+            <a href='https://www.linkedin.com/in/katya-anco/' target='_blank'><img class='student--container--card--badge' src="<%= asset_path('linkedin-box-line.svg') %>"></a>
+            <a href='https://github.com/katy089' target='_blank'><img class='student--container--card--badge' src="<%= asset_path('github-svgrepo-com.svg') %>"></a>
+            <p class='text-xs regular no-shrink'>Katya Anco</p>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
